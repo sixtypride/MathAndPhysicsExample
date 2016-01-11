@@ -1,26 +1,29 @@
 /*
-    소스 이해를 위한 캔버스 기초
+    <소스 이해를 위한 캔버스 기초>
+    즉시모드
 
-    라디언의 이해
+    <속도>
+    시간당 운동량
 
-    도, 라디언 변환
-
-    삼각 함수의 정의 및 기초
+    <가속도>
+    가속 - 속도를 높히다
+    감속 - 속도를 낮추다
  */
 
 var canvas = document.getElementById('canvas'),
     context = canvas.getContext('2d');
 
-var speed = 5,
-    angle = 360;
-
 
 var ball = new Ball(context);
 
-ball.x = 100;
-ball.y = 100;
+ball.x = 0;
+ball.y = 400;
+ball.ax = 0.1;
+ball.ay = 0.1;
+ball.vx = 5;
+ball.vy = 5;
 
-
+render();
 requestAnimationFrame(loop);
 
 function render() {
@@ -30,12 +33,16 @@ function render() {
 
 function loop() {
 
-    var radian = angle * Math.PI/180;
-
-    ball.x += speed * Math.cos(radian);
-    ball.y += speed * Math.sin(radian);
+    if(ball.vx > 0)
+    {
+        ball.vx -= ball.ax;
+        ball.x += ball.vx;
+        ball.vy -= ball.ay;
+        ball.y += ball.vy;
+    }
 
     render();
     requestAnimationFrame(loop);
 }
+
 
