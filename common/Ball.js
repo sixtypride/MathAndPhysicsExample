@@ -18,7 +18,7 @@ Ball.prototype = {
         this._context.beginPath();
         this._context.arc(0,0, this.radius, 0, Math.PI * 2);
         this._context.fill();
-        this._context.fillRect(-50, -5, 50, 10);
+        //this._context.fillRect(-50, -5, 50, 10);
 
         this._context.restore();
     }

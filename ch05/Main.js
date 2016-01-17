@@ -117,10 +117,6 @@ translate(rightTop, dx, dy);
 translate(rightBottom, dx, dy);
 translate(leftBottom, dx, dy);
 
-/*
-
-*/
-
 
 function draw() {
     context.save();
