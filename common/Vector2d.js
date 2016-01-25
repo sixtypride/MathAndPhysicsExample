@@ -27,6 +27,10 @@ Vector2d.prototype = {
         return new Vector2d(cos * this.vx - sin * this.vy, cos * this.vy + sin * this.vx);
     },
     dotProduct: function (vec) {
-        return new Vector2d(this.vx * vec.vx, this.vy * vec.vy);
+        return this.vx * vec.vx + this.vy * vec.vy;
+    },
+    normal : function() {
+        return new Vector2d(-this.vy, this.vx);
     }
+
 }
