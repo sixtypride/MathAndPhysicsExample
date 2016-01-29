@@ -20,7 +20,7 @@ function windowToCanvas(x, y) {
 }
 
 var ball = new Ball(context);
-var line = new Line(context, {x: 200, y: 100}, {x: 400, y: 200});
+var line = new Line(context, {x: 500, y: 400}, {x: 800, y: 300});
 
 canvas.onmousemove = function (e) {
     var loc = windowToCanvas(e.clientX, e.clientY);
@@ -55,7 +55,9 @@ function loop() {
             ball.color = "black";
         }
     }
-
+    else {
+        ball.color = "black";
+    }
 
     render();
     requestAnimationFrame(loop);

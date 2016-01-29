@@ -3,8 +3,7 @@ function Ball(context) {
     this.x = 0;
     this.y = 0;
     this.radius = 10;
-    this.vx = 0;
-    this.vy = 0;
+    this.vec = new Vector2d(0, 0);
     this.angle = 0;
     this.color = "black";
 }

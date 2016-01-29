@@ -52,7 +52,6 @@ canvas.onmousemove = function(e) {
     shooter.angle = Math.atan2(loc.y - startY, loc.x - startX);
 }
 
-
 render();
 requestAnimationFrame(loop);
 
@@ -69,8 +68,6 @@ function render() {
 }
 
 function loop() {
-
-    ball.angle = Math.atan2(ball.vy, ball.vx);
 
     ball.vy += gravity;
     ball.x += ball.vx;
