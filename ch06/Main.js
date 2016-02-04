@@ -22,9 +22,9 @@ var shooter = new Shooter(context);
 
 var startX = 100,
     startY = canvas.height - 100;
-var speed = 25;
+var speed = 20;
 var bounce = -0.9;
-var gravity = 0.4;
+var gravity = 0.1;
 
 ball.x = startX;
 ball.y = startY;
@@ -101,23 +101,22 @@ function loop() {
     ball.x = x1;
     ball.y = y1 + canvas.height;
 
-    if(ball.x > canvas.width - ball.radius)
-    {
+    if (ball.x > canvas.width - ball.radius) {
         ball.x = canvas.width - ball.radius;
         ball.vx *= bounce;
     }
-    else if(ball.x < ball.radius)
-    {
+    else if (ball.x < ball.radius) {
         ball.x = ball.radius;
         ball.vx *= bounce;
     }
-    /*
-    else if(ball.y > canvas.height - ball.radius)
-    {
+    else if (ball.y < ball.radius) {
+        ball.y = ball.radius;
+        ball.vy *= bounce;
+    }
+    else if (ball.y > canvas.height - ball.radius) {
         ball.y = canvas.height - ball.radius;
         ball.vy *= bounce;
     }
-    */
 
     render();
     requestAnimationFrame(loop);

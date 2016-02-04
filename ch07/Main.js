@@ -44,7 +44,7 @@ function loop() {
     var a = new Vector2d(line.endPt.x - line.startPt.x, line.endPt.y - line.startPt.y);
     var b = new Vector2d(line.startPt.x - ball.x, line.startPt.y - ball.y);
 
-    var t = (b.dotProduct(a) / a.dotProduct(a)) * -1;
+    var t = (b.dot(a) / a.dot(a)) * -1;
 
     if (t >= 0 && t <= 1) {
         var p = a.scale(t).add(b);

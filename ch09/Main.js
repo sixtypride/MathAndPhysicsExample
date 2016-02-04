@@ -49,8 +49,8 @@ function intersection(l1, l2)
     var b = new Vector2d(l1.endPt.x - l1.startPt.x, l1.endPt.y - l1.startPt.y)
     var c = new Vector2d(l2.startPt.x - l1.startPt.x, l2.startPt.y - l1.startPt.y);
 
-    var t = c.dotProduct(b.normal()) / a.dotProduct(b.normal()) * -1;
-    var s = c.dotProduct(a.normal()) / b.dotProduct(a.normal());
+    var t = c.dot(b.normal()) / a.dot(b.normal()) * -1;
+    var s = c.dot(a.normal()) / b.dot(a.normal());
 
     if(t <= 0 || t >= 1 || s <= 0 || s >= 1) return;
 

@@ -26,7 +26,7 @@ Vector2d.prototype = {
         var sin = Math.sin(rad);
         return new Vector2d(cos * this.vx - sin * this.vy, cos * this.vy + sin * this.vx);
     },
-    dotProduct: function (vec) {
+    dot: function (vec) {
         return this.vx * vec.vx + this.vy * vec.vy;
     },
     normal : function() {
